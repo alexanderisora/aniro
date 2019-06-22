@@ -1,7 +1,7 @@
 {
   "name": "aniro",
   "version": "0.0.1",
-  "description": "",
+  "description": "Animate your page effortlessly",
   "main": "aniro.js",
   "repository": {
     "type": "git",
