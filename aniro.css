@@ -1,7 +1,7 @@
 .aniro_hidden {
   opacity: 0;
-  transition:
-    opacity .5s cubic-bezier(.25, .8, .25, 1);
+  will-change: opacity transform;
+  transition: opacity .5s;
 }
 
 .aniro_active {
