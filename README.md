@@ -59,3 +59,4 @@ It's "animation" plus "yamero" – "stop it" in Japanese. The word is heavily as
 ## Author
 [Miloslav Voloskov](https://miloslav.website)  
 The idea by [nice-naming team](https://github.com/nice-naming)
+Gifs are from [30000fps](https://30000fps.com/) 
