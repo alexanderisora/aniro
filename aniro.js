@@ -1,18 +1,31 @@
-(function () {
+function aniro (userConfig) {
+  const config = {
+    line: Math.round(document.documentElement.clientHeight / 2),
+    gap: 30,
+    ...userConfig
+  }
+
+  const getChildren = () => Array.prototype.slice.call(document.querySelectorAll('[data-aniro]'))
+
+  const isBottomReached = () => {
+    const scrollHeight = document.documentElement.scrollHeight
+    const scrollTop = document.documentElement.scrollTop
+    const clientHeight = document.documentElement.clientHeight
+    return scrollHeight - scrollTop === clientHeight
+  }
+
   const root = document.querySelector('[data-aniro_root]')
   const oldOnScroll = window.onscroll || function () {}
-  const gap = 30;
+  const gap = config.gap
+  const activeLine = config.line
 
-  const activeLine = Math.round(document.documentElement.clientHeight / 2)
-  document.body.innerHTML += `
-    <div style="position: fixed; top: ${activeLine}px">–––––––</div>
-  `
+  getChildren().forEach(child => child.classList.add('aniro_hidden'))
 
   window.onscroll = e => {
     requestAnimationFrame(() => {
       oldOnScroll(e)
 
-      const children = Array.prototype.slice.call(document.querySelectorAll('[data-aniro]'))
+      const children = getChildren()
 
       children.forEach(child => {
         const childRect = child.getBoundingClientRect()
@@ -23,11 +36,15 @@
           (activeLine > childTop) &&
           (activeLine < childBottom)
         ) {
-          child.classList.add('aniro_active')
-        } else {
-          child.classList.remove('aniro_active')
+          if (!(child.classList.contains('aniro_active'))) {
+            child.classList.add('aniro_active')
+          }
         }
       })
+
+      if (isBottomReached()) {
+        children.forEach(child => child.classList.add('aniro_active'))
+      }
     })
   }
-})()
+}

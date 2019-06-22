@@ -1,3 +1,18 @@
+.aniro_hidden {
+  opacity: 0;
+  transition:
+    opacity .3s linear;
+}
+
 .aniro_active {
-  color: red;
+  animation: aniro .3s;
+  opacity: 1;
+}
+
+@keyframes aniro {
+  from {
+    transform: translateY(20px);
+  } to {
+    transform: translateY(0);
+  }
 }
