@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Work Sans', sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+p {
+  max-width: 500px;
+}
+
+.page {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.advantage {
+  max-width: 200px;
+  margin: 30px;
+}
+
+.pillbox {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  justify-content: center;
+}

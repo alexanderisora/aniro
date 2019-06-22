@@ -2,18 +2,15 @@
   "name": "aniro",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "aniro.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/uyouthe/aniro.git"
   },
-  "author": "",
+  "author": "Miloslav Voloskov",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/uyouthe/aniro/issues"
   },
-  "homepage": "https://github.com/uyouthe/aniro#readme"
+  "homepage": "https://miloslav.website/aniro"
 }
