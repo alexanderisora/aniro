@@ -1,12 +1,12 @@
 .aniro_hidden {
   opacity: 0;
-  will-change: opacity transform;
-  transition-property: opacity;
-  transition-duration: .5s;
   backface-visibility: hidden;
 }
 
 .aniro_active {
+  will-change: opacity transform;
+  transition-property: opacity;
+  transition-duration: .5s;
   animation-name: aniro;
   animation-duration: .5s;
   animation-timing-function: cubic-bezier(.25, .8, .25, 1);
