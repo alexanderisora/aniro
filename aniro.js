@@ -2,6 +2,7 @@ function aniro (userConfig) {
   const config = {
     line: Math.round(document.documentElement.clientHeight / 2),
     gap: 30,
+    disableWhenBottomReached: true,
     ...userConfig
   }
 
@@ -49,5 +50,9 @@ function aniro (userConfig) {
       oldOnScroll(e)
       getChildren().forEach(activateIfNeeded)
     })
+
+    if (disableWhenBottomReached && isBottomReached()) {
+      window.onscroll = oldOnScroll
+    }
   }
 }

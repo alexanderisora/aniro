@@ -36,7 +36,11 @@ aniro({
 
   // a padding of the animated elements' "hitbox", in pixels
   // defaults to 30
-  gap: 30
+  gap: 30,
+
+  // disable the whole animation when bottom is scrolled to. Recommended for better performance
+  // defaults to false
+  disableWhenBottomReached: false
 })
 ```
 
