@@ -38,7 +38,7 @@ aniro({
   // defaults to 30
   gap: 30,
 
-  // disable the whole animation when bottom is scrolled to. Recommended for better performance
+  // disable the whole animation when the bottom is reached. Recommended for better performance
   // defaults to false
   disableWhenBottomReached: false
 })
