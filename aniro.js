@@ -16,8 +16,8 @@ function aniro (userConfig) {
   }
 
   const hasToBeAnimated = node => {
-    const childTop = node.getBoundingClientRect().top - gap
-    return (activeLine > childTop) && !isActive(node)
+    const childTop = node.getBoundingClientRect().top - config.gap
+    return (config.line > childTop) && !isActive(node)
   }
 
   const activateIfNeeded = node => {
@@ -37,8 +37,6 @@ function aniro (userConfig) {
 
   const root = document.querySelector('[data-aniro_root]')
   const oldOnScroll = window.onscroll || function () {}
-  const gap = config.gap
-  const activeLine = config.line
 
   getChildren().forEach(child => {
     hide(child)
