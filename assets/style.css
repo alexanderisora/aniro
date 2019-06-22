@@ -42,3 +42,8 @@ p {
   align-items: baseline;
   justify-content: center;
 }
+
+img {
+  width: 200px;
+  height: auto;
+}
