@@ -1,12 +1,5 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 :root {
   font-family: 'Work Sans', sans-serif;
-  line-height: 1.5;
 }
 
 body {
@@ -45,6 +38,4 @@ p {
 
 img {
   width: 200px;
-  height: auto;
-  display: block;
 }
