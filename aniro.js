@@ -51,7 +51,7 @@ function aniro (userConfig) {
       getChildren().forEach(activateIfNeeded)
     })
 
-    if (disableWhenBottomReached && isBottomReached()) {
+    if (config.disableWhenBottomReached && isBottomReached()) {
       window.onscroll = oldOnScroll
     }
   }
