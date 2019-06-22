@@ -1,4 +1,4 @@
-# Aniro
+# 💨 Aniro
 
 Animate your page effortlessly.
 
