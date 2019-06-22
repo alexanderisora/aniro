@@ -16,13 +16,14 @@ function aniro (userConfig) {
 
   const isActive = node => node.classList.contains('aniro_active')
   const activate = node => node.classList.add('aniro_active')
+  const hide = node => node.classList.add('aniro_hidden')
 
   const root = document.querySelector('[data-aniro_root]')
   const oldOnScroll = window.onscroll || function () {}
   const gap = config.gap
   const activeLine = config.line
 
-  getChildren().forEach(child => child.classList.add('aniro_hidden'))
+  getChildren().forEach(hide)
 
   window.onscroll = e => {
     requestAnimationFrame(() => {
