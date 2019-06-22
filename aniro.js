@@ -38,7 +38,6 @@ function aniro (userConfig) {
 
         if (
           (activeLine > childTop) &&
-          (activeLine < childBottom) &&
           !isActive(child)
         ) {
           activate(child)
