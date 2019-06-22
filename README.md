@@ -4,7 +4,7 @@ Animate your page effortlessly.
 
 ## What's this?
 
-Animations are always something we shelve off. Aniro is here to help – 
+Animations are always something we shelve off. Aniro is here to help –
 you'll only need to scatter some attributes here and your page will be
 animated right away.
 
@@ -32,12 +32,20 @@ You can pass the configuration object to the `aniro()` initialization function:
 aniro({
   // the position of the virtual line that triggers the animation, in pixels relative to the viewport top.
   // defaults to document.documentElement.clientHeight / 2
-  line: 300, 
-  
+  line: 300,
+
   // a padding of the animated elements' "hitbox", in pixels
   // defaults to 30
   gap: 30
 })
+```
+
+### Delays
+
+You may add `data-aniro_delay` attribute to delay the animation. The value is milliseconds:
+
+```HTML
+<div data-aniro_delay="300"> ... </div>
 ```
 
 ## Naming
@@ -46,5 +54,4 @@ It's "animation" plus "yamero" – "stop it" in Japanese. The word is heavily as
 
 ## Author
 [Miloslav Voloskov](https://miloslav.website)  
-The idea by [nice-naming team](https://github.com/nice-naming) 
-
+The idea by [nice-naming team](https://github.com/nice-naming)

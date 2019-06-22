@@ -26,7 +26,12 @@ function aniro (userConfig) {
   }
 
   const isActive = node => node.classList.contains('aniro_active')
-  const activate = node => node.classList.add('aniro_active')
+  const activate = node => {
+    const delay = parseInt(node.dataset.aniro_delay || 0, 10)
+    node.style.transitionDelay = delay + 'ms'
+    node.style.animationDelay = delay + 'ms'
+    node.classList.add('aniro_active')
+  }
   const hide = node => node.classList.add('aniro_hidden')
 
   const root = document.querySelector('[data-aniro_root]')
