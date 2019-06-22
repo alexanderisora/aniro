@@ -14,6 +14,9 @@ function aniro (userConfig) {
     return scrollHeight - scrollTop === clientHeight
   }
 
+  const isActive = node => node.classList.contains('aniro_active')
+  const activate = node => node.classList.add('aniro_active')
+
   const root = document.querySelector('[data-aniro_root]')
   const oldOnScroll = window.onscroll || function () {}
   const gap = config.gap
@@ -34,16 +37,15 @@ function aniro (userConfig) {
 
         if (
           (activeLine > childTop) &&
-          (activeLine < childBottom)
+          (activeLine < childBottom) &&
+          !isActive(child)
         ) {
-          if (!(child.classList.contains('aniro_active'))) {
-            child.classList.add('aniro_active')
-          }
+          activate(child)
         }
       })
 
       if (isBottomReached()) {
-        children.forEach(child => child.classList.add('aniro_active'))
+        children.forEach(activate)
       }
     })
   }
