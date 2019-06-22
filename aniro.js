@@ -14,6 +14,17 @@ function aniro (userConfig) {
     return scrollHeight - scrollTop === clientHeight
   }
 
+  const hasToBeAnimated = node => {
+    const childTop = node.getBoundingClientRect().top - gap
+    return (activeLine > childTop) && !isActive(node)
+  }
+
+  const activateIfNeeded = node => {
+    if (hasToBeAnimated(node) || isBottomReached()) {
+      activate(node)
+    }
+  }
+
   const isActive = node => node.classList.contains('aniro_active')
   const activate = node => node.classList.add('aniro_active')
   const hide = node => node.classList.add('aniro_hidden')
@@ -23,30 +34,15 @@ function aniro (userConfig) {
   const gap = config.gap
   const activeLine = config.line
 
-  getChildren().forEach(hide)
+  getChildren().forEach(child => {
+    hide(child)
+    activateIfNeeded(child)
+  })
 
   window.onscroll = e => {
     requestAnimationFrame(() => {
       oldOnScroll(e)
-
-      const children = getChildren()
-
-      children.forEach(child => {
-        const childRect = child.getBoundingClientRect()
-        const childTop = childRect.top - gap
-        const childBottom = childRect.bottom + gap
-
-        if (
-          (activeLine > childTop) &&
-          !isActive(child)
-        ) {
-          activate(child)
-        }
-      })
-
-      if (isBottomReached()) {
-        children.forEach(activate)
-      }
+      getChildren().forEach(activateIfNeeded)
     })
   }
 }
