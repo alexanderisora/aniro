@@ -2,6 +2,7 @@
   opacity: 0;
   will-change: opacity transform;
   transition: opacity .5s;
+  backface-visibility: hidden;
 }
 
 .aniro_active {
@@ -11,8 +12,8 @@
 
 @keyframes aniro {
   from {
-    transform: translateY(50px);
+    transform: translateY(50px) perspective(1px);
   } to {
-    transform: translateY(0);
+    transform: translateY(0) perspective(1px);
   }
 }
