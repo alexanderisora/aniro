@@ -52,6 +52,10 @@ You may add `data-aniro_delay` attribute to delay the animation. The value is mi
 <div data-aniro_delay="300"> ... </div>
 ```
 
+### Immediate animation
+
+If you want an element to be animated right after page loads, add `data-aniro_now` attribute to it. You'll probably want to use it for something your users would see right away.
+
 ## Naming
 
 It's "animation" plus "yamero" – "stop it" in Japanese. The word is heavily associated with anime culture.
@@ -59,4 +63,4 @@ It's "animation" plus "yamero" – "stop it" in Japanese. The word is heavily as
 ## Author
 [Miloslav Voloskov](https://miloslav.website)  
 The idea by [nice-naming team](https://github.com/nice-naming)
-Gifs are from [30000fps](https://30000fps.com) 
+Gifs are from [30000fps](https://30000fps.com)

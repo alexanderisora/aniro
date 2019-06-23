@@ -17,7 +17,9 @@ function aniro (userConfig) {
 
   const hasToBeAnimated = node => {
     const childTop = node.getBoundingClientRect().top - config.gap
-    return (config.line > childTop) && !isActive(node)
+    const shouldBeActivatedImmediately = 'aniro_now' in node.dataset
+    return shouldBeActivatedImmediately ||
+      ((config.line > childTop) && !isActive(node))
   }
 
   const activateIfNeeded = node => {
